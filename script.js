@@ -15,7 +15,7 @@ const setMainElement = (cardNum) => {
   cardNumGlob = cardNum;
   //   cards = JSON.parse(localStorage.cards);
   if (cardNum != 1) {
-    main.innerHTML += `<div id="previousCard" class="previousCard">
+    main.innerHTML += `<div id="previousCard" class="previousCard hidden">
     <div class="box">
         <div class="flipBtn"><i class="fa fa-refresh"></i> Flip</div>
         <div>${cards[cardNum - 2].question}</div>
@@ -38,7 +38,7 @@ const setMainElement = (cardNum) => {
 </div>`;
 
   if (cardNum != cards.length) {
-    main.innerHTML += `<div id="nextCard" class="nextCard">
+    main.innerHTML += `<div id="nextCard" class="nextCard hidden">
   <div class="box">
       <div class="flipBtn"><i class="fa fa-refresh"></i> Flip</div>
       <div>${cards[cardNum].question}</div>
@@ -80,22 +80,28 @@ function closeAddNewCardPage() {
 
 function nextCardShow() {
   if (cardNumGlob != cards.length) {
-    document.getElementById("thisCard").classList.add("previousCard");
-    document.getElementById("nextCard").classList.remove("nextCard");
-    document.getElementById("nextCard").classList.add("thisCard");
+    document.getElementById("nextCard").classList.remove("hidden");
     setTimeout(() => {
-      setMainElement((cardNumGlob += 1));
-    }, 500);
+      document.getElementById("thisCard").classList.add("previousCard");
+      document.getElementById("nextCard").classList.remove("nextCard");
+      document.getElementById("nextCard").classList.add("thisCard");
+      setTimeout(() => {
+        setMainElement((cardNumGlob += 1));
+      }, 500);
+    }, 1);
   }
 }
 function previousCardShow() {
   if (cardNumGlob != 1) {
-    document.getElementById("thisCard").classList.add("nextCard");
-    document.getElementById("previousCard").classList.remove("previousCard");
-    document.getElementById("previousCard").classList.add("thisCard");
+    document.getElementById("previousCard").classList.remove("hidden");
     setTimeout(() => {
-      setMainElement((cardNumGlob -= 1));
-    }, 500);
+      document.getElementById("thisCard").classList.add("nextCard");
+      document.getElementById("previousCard").classList.remove("previousCard");
+      document.getElementById("previousCard").classList.add("thisCard");
+      setTimeout(() => {
+        setMainElement((cardNumGlob -= 1));
+      }, 500);
+    }, 1);
   }
 }
 
