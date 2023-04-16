@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Cards</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="homePage" id="homePage">
+        <h1>Memory Cards
+            <button id="addNewCardBtn" onclick="addNewCard()">
+                <i class="fa fa-plus"></i> Add New Card
+            </button>
+        </h1>
+
+        <main id="main">
+            <!-- <div id="previousCard" class="previousCard">
+                <div class="box">
+                    <div class="flipBtn"><i class="fa fa-refresh"></i> Flip</div>
+                    <div>1111?</div>
+                </div>
+                <div class="box hideCard">
+                    <div class="flipBtn"><i class="fa fa-refresh"></i> Flip</div>
+                    <div>1111</div>
+                </div>
+            </div>
+            <div id="thisCard" class="thisCard">
+                <div id="questionBox" class="box" onclick="flip()">
+                    <div class="flipBtn"><i class="fa fa-refresh"></i> Flip</div>
+                    <div id="questionText">2222?</div>
+                </div>
+                <div id="answerBox" class="box hideCard" onclick="flip()">
+                    <div class="flipBtn"><i class="fa fa-refresh"></i> Flip</div>
+                    <div id="answerText">2222</div>
+                </div>
+            </div>
+            <div id="nextCard" class="nextCard">
+                <div class="box">
+                    <div class="flipBtn"><i class="fa fa-refresh"></i> Flip</div>
+                    <div>3333?</div>
+                </div>
+                <div class="box hideCard">
+                    <div class="flipBtn"><i class="fa fa-refresh"></i> Flip</div>
+                    <div>3333</div>
+                </div>
+            </div> -->
+        </main>
+
+        <div class="others">
+            <div class="back" onclick="previousCardShow()"><span class="glyphicon glyphicon-arrow-left"></span></div>
+            <div id="showPager" class="showPager"></div>
+            <div class="next" onclick="nextCardShow()"><span class="glyphicon glyphicon-arrow-right"></span></div>
+        </div>
+        <button class="clearCards" onclick="clearCards()"><i class="fa fa-trash"></i> Clear Cards</button>
+    </div>
+
+    <div class="addNewCardPage hidden hidden1" id="addNewCardPage">
+        <h1>Add New Card <div class="closeBtn2" onclick="closeAddNewCardPage()"><i class="fa fa-close"></i></div>
+        </h1>
+        <div class="area">
+            <label for="question">Question</label>
+            <textarea id="question" placeholder="Enter question..."></textarea>
+        </div>
+        <div class="area">
+            <label for="answer">Answer</label>
+            <textarea id="answer" placeholder="Enter Answer..."></textarea>
+        </div>
+
+
+
+        <button id="addCardBtn" onclick="addCardToCards()">
+            <i class="fa fa-plus"></i> Add Card
+        </button>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

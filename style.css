@@ -1,0 +1,145 @@
+body {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.homePage,
+.addNewCardPage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.addNewCardPage {
+  position: absolute;
+  background-color: whitesmoke;
+  width: 100%;
+  transition: 0.5s;
+}
+
+.hidden1 {
+  opacity: 0;
+}
+h1 {
+  position: relative;
+}
+.closeBtn2 {
+  position: absolute;
+  font-size: medium;
+  top: 10px;
+  right: -20px;
+}
+#addNewCardBtn {
+  padding: 3px;
+  position: absolute;
+  font-size: small;
+  width: max(10vw, 80px);
+  bottom: 0.6rem;
+  right: calc(-5px - max(10vw, 80px));
+}
+main {
+  width: max(390px, 37vw);
+  height: 260px;
+  margin-top: 10px;
+  position: relative;
+  padding: 10px;
+  background-color: white;
+}
+.box {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  background-color: white;
+  border-radius: 5px;
+  filter: drop-shadow(0 0 4px gray);
+  font-size: x-large;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  transition: 0.4s;
+}
+.hideCard {
+  z-index: -1;
+  scale: 1 0;
+}
+.thisCard {
+  opacity: 1;
+  transition: 0.5s;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.previousCard {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: perspective(50cm) translateX(calc((100% - 20px) * -1))
+    rotateY(40deg);
+  opacity: 0;
+  transition: 0.5s;
+}
+.nextCard {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: perspective(50cm) translateX(calc((100% - 20px))) rotateY(-40deg);
+  opacity: 0;
+  transition: 0.5s;
+}
+.flipBtn {
+  color: #c7c7c7;
+  font-size: large;
+  position: absolute;
+  padding: 5px 10px;
+  top: 0;
+  right: 0;
+}
+.others {
+  margin-top: 20px;
+  display: flex;
+}
+.showPager {
+  width: 80px;
+  text-align: center;
+}
+.next,
+.back {
+  cursor: pointer;
+}
+.clearCards {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.area {
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+}
+textarea {
+  all: unset;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white;
+  width: 350px;
+  height: 100px;
+}
+textarea:focus-within {
+  border: 1px solid skyblue;
+  filter: drop-shadow(0 0 5px skyblue);
+}
+.closeBtn2 {
+  cursor: pointer;
+}
